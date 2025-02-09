@@ -30,7 +30,7 @@ export const HomePage = () => {
     <h1 className={styles.error}>{errorMessage}</h1>
   ) : (
     <div className={styles.homePage}>
-      <h1 className={styles.welcomeTitle}>Welcome to Nice Gadgets store!</h1>
+      <h1 className={styles.welcomeTitle}>Product Catalog</h1>
       <PicturesSlider />
       <ProductsSlider title={`Brand new models`} products={productsByYear} />
       <ShopByCategory products={products} />
