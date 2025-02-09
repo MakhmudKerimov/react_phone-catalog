@@ -1,0 +1,346 @@
+@import '../../styles/main';
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  height: $header-height;
+  box-shadow: 0 1px 0 $elements-color;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.logoLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 128px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 425px;
+}
+
+.navBtn {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Mont, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 11px;
+  color: $secondary-color;
+  transition: $transition-duration;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.isActiveMenu {
+  color: $primary-color;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: $header-height / 2 + 2.5px;
+    width: 100%;
+    content: '';
+    height: 3px;
+    background-color: $primary-color;
+    transition: $transition-duration;
+    animation: underline $transition-duration linear;
+  }
+}
+
+.icons {
+  display: flex;
+}
+
+.iconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: $header-height;
+  box-shadow: -1px 0 0 $elements-color;
+}
+
+.favorites {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../public/img/icons/favorites (Heart Like).svg');
+}
+
+.cart {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../public/img/icons/Shopping bag (Cart).svg');
+}
+
+.isActiveFavorites,
+.isActiveCart {
+  color: $primary-color;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: $header-height / 2 + 6.5px;
+    width: 64px;
+    left: -24px;
+    content: '';
+    height: 3px;
+    background-color: $primary-color;
+    transition: $transition-duration;
+    animation: underline $transition-duration linear;
+  }
+}
+
+.favoritesCounter,
+.cartCounter {
+  position: absolute;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #eb5757;
+  width: 16px;
+  height: 16px;
+  border: 1px solid white;
+  color: white;
+  font-family: Mont, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  cursor: default;
+}
+
+.iconLink {
+  transition: $transition-duration;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+.iconMobileMenu {
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../public/img/icons/Menu.svg');
+  cursor: pointer;
+}
+
+.openMenu {
+  background-image: url('../../../public/img/icons/Close.svg');
+}
+
+.mobileMenuOpen {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+  flex-direction: column;
+  top: $header-height-mobile + 1px;
+  width: 100%;
+  height: 618px;
+  background-color: white;
+}
+
+.mobileNav {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  height: 160px;
+}
+
+.navBtnMobile {
+  margin-top: 16px;
+  color: $secondary-color;
+  font-family: Mont, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 11px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-decoration: none;
+  transition: $transition-duration;
+
+  &:first-child {
+    margin-top: 24px;
+  }
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.isActiveMenuMobile {
+  color: $primary-color;
+
+  &::after {
+    display: block;
+    margin-top: 6px;
+    top: $header-height / 2 + 2.5px;
+    width: 100%;
+    content: '';
+    height: 3px;
+    background-color: $primary-color;
+    transition: $transition-duration;
+    animation: underline $transition-duration linear;
+  }
+}
+
+.iconsMobile {
+  display: flex;
+  height: 64px;
+  width: 100%;
+  bottom: 0;
+  border: 1px solid $elements-color;
+}
+
+.iconBoxMobile {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  box-shadow: -1px 0 0 0 $elements-color;
+}
+
+.iconLinkMobile {
+  transition: $transition-duration;
+}
+
+.favoritesMobile {
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../public/img/icons/favorites (Heart Like).svg');
+}
+
+.cartMobile {
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../public/img/icons/Shopping bag (Cart).svg');
+}
+
+.isActiveCartMobile {
+  position: relative;
+  color: $primary-color;
+
+  &::after {
+    position: absolute;
+    display: block;
+    top: 62px;
+    width: 100%;
+    content: '';
+    height: 3px;
+    background-color: $primary-color;
+    transition: $transition-duration;
+    animation: underline $transition-duration linear;
+  }
+}
+
+.isActiveFavoritesMobile {
+  position: relative;
+  color: $primary-color;
+
+  &::after {
+    position: absolute;
+    display: block;
+    top: 62px;
+    width: 100%;
+    content: '';
+    height: 3px;
+    background-color: $primary-color;
+    transition: $transition-duration;
+    animation: underline $transition-duration linear;
+  }
+}
+
+.favoritesCounterMobile,
+.cartCounterMobile {
+  position: absolute;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #eb5757;
+  width: 16px;
+  height: 16px;
+  border: 1px solid white;
+  color: white;
+  font-family: Mont, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  cursor: default;
+}
+
+@include on-mobile {
+  .header {
+    height: $header-height-mobile;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .icons {
+    display: none;
+  }
+
+  .iconBox {
+    width: $header-height-mobile;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+}
+
+@include on-tablet {
+  .header {
+    height: $header-height-mobile;
+  }
+
+  .nav {
+    width: 329px;
+  }
+
+  .isActiveMenu::after {
+    top: $header-height-mobile / 2 + 2.5px;
+  }
+
+  .isActiveFavorites::after {
+    top: $header-height / 2 - 2px;
+    width: 49px;
+    left: -17px;
+  }
+
+  .isActiveCart::after {
+    top: $header-height / 2 - 2px;
+    width: 49px;
+    left: -17px;
+  }
+
+  .iconBox {
+    width: $header-height-mobile;
+  }
+}
